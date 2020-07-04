@@ -3,7 +3,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-const Counter = ({ counter, decrement, increment }) => (
+export const Counter = ({ counter, decrement, increment }) => (
   <div>
     <h1>{counter}</h1>
     <button onClick={decrement}>-</button>
