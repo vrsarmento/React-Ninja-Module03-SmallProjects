@@ -1,23 +1,14 @@
 'use strict'
 
 import React from 'react'
-import { connect } from 'react-redux'
 
-export const Counter = ({ counter, decrement, increment }) => (
-  <div>
+const Counter = ({ counter, decrement, increment, removeCounter }) => (
+  <div style={{ textAlign: 'center' }}>
+    <button style={{ fontSize: 8 }} onClick={removeCounter}>&times;</button>
     <h1>{counter}</h1>
     <button onClick={decrement}>-</button>
     <button onClick={increment}>+</button>
   </div>
 )
 
-const mapStateToProps = (state) => ({
-  counter: state
-})
-
-const mapDispatchToProps = (dispatch) => ({
-  increment: () => dispatch({ type: 'INCREMENT' }),
-  decrement: () => dispatch({ type: 'DECREMENT' })
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Counter)
+export default Counter
