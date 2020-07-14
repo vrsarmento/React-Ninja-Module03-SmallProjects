@@ -1,7 +1,7 @@
 'use strict'
 
 import React, { Component } from 'react'
-//import Example from 'components/example'
+// import Example from 'components/example'
 import './css/style.css'
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
   }
 
   async componentDidMount () {
-    // Dynamic import example - Another way to code splitting 
+    // Dynamic import example - Another way to code splitting
     const title = await import('components/example')
     this.setState({
       Component: title.default

@@ -21,6 +21,7 @@ module.exports = {
 	}),
 
 	plugins: [
+    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlPlugin(common.htmlPluginConfig('template-dev.html'))
 	],

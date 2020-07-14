@@ -49,23 +49,23 @@
     }
   },
   "dependencies": {
-    "babel-runtime": "^6.22.0",
-    "compression": "1.6.2",
-    "express": "4.15.2",
-    "fbjs": "0.8.12",
+    "babel-runtime": "^6.26.0",
+    "compression": "^1.6.2",
+    "express": "^4.15.2",
+    "fbjs": "^0.8.12",
     "normalize.css": "^8.0.1",
-    "preact": "7.2.1",
-    "preact-compat": "3.14.3",
-    "prop-types": "15.5.8",
-    "react": "15.5.4",
-    "react-dom": "15.5.4",
-    "webpack-bundle-analyzer": "2.3.1"
+    "preact": "^8.2.5",
+    "preact-compat": "^3.17.0",
+    "prop-types": "15.5.10",
+    "react": "15.6.1",
+    "react-dom": "15.6.1"
   },
   "standard": {
     "globals": [
       "test",
       "it",
-      "describe"
+      "describe",
+      "expect"
     ]
   }
 }

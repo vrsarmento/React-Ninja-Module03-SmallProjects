@@ -40,13 +40,12 @@ module.exports = {
   jsLoader: {
     test: /\.js$/,
     include: paths.src,
-    use: {
+    use: ['react-hot-loader/webpack', {
       loader: 'babel-loader',
       options: {
         babelrc: false,
         presets: [['env', { modules: false }], 'stage-0', 'react'],
         plugins: [
-          'react-hot-loader/babel',
           ['transform-runtime', {
             'helpers': false,
             'polyfill': false,
@@ -54,7 +53,7 @@ module.exports = {
           }]
         ]
       }
-    }
+    }]
   },
 
   cssLoader: {
@@ -93,7 +92,8 @@ module.exports = {
       src: paths.src,
       components: join(paths.src, 'components'),
       utils: join(paths.src, 'utils'),
-      views: join(paths.src, 'views')
+      views: join(paths.src, 'views'),
+      reducers: join(paths.src, 'redux-flow', 'reducers')
     },
   },
 }
