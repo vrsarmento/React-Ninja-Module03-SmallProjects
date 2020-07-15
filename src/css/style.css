@@ -16,3 +16,12 @@ html,
 body {
   margin: 0;
 }
+
+.todoApp li {
+  cursor: pointer;
+  margin: 5px;
+}
+
+.todoApp li.completed {
+  text-decoration: line-through;
+}
