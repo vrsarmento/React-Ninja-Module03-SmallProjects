@@ -1,31 +1,19 @@
 'use strict'
 
-import React, { Component } from 'react'
-// import Example from 'components/example'
+import React  from 'react'
 import './css/style.css'
 
-class App extends Component {
-  constructor () {
-    super()
-    this.state = {
-      title: 'My React App',
-      Component: 'span'
-    }
-  }
-
-  async componentDidMount () {
-    // Dynamic import example - Another way to code splitting
-    const title = await import('components/example')
-    this.setState({
-      Component: title.default
-    })
-  }
-
-  render () {
-    return (
-      <this.state.Component>{this.state.title}</this.state.Component>
-    )
-  }
-}
+const App = () => (
+  <div>
+    <input type="text" />
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ul>
+  </div>
+)
 
 export default App
