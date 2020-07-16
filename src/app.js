@@ -8,7 +8,7 @@ import './css/style.css'
 const App = ({ todos, handleAddTodo, handleToggleTodo }) => (
   <div className='todoApp'>
     <form onSubmit={handleAddTodo}>
-      <input type='text' name='todo' />
+      <input type='text' name='todo' autoFocus />
       <button type='submit'>Adicionar</button>
     </form>
 
