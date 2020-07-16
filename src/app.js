@@ -19,7 +19,7 @@ const App = ({ todos, handleAddTodo, handleToggleTodo }) => (
           className={todo.completed ? 'completed' : ''}
           onClick={handleToggleTodo(todo.id)}
         >
-          {todo.text}
+          <span>{todo.text}</span>
         </li>
       ))}
     </ul>
