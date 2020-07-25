@@ -78,4 +78,28 @@ body {
 .todoApp li.completed::before {
   content: '\2713';
   text-decoration: none;
-} 
+}
+
+.filter {
+  margin-top: 15px;
+  padding-bottom: 15px;
+}
+
+.filterItem {
+  text-decoration: none;
+  color: #707070;
+}
+
+span.filterItem {
+  color: #5fb2ff;
+}
+
+a.filterItem:hover {
+  color: #5fb2ff;
+}
+
+.filterItem + .filterItem {
+  margin-left: 15px;
+  padding-left: 15px;
+  border-left: 1px solid #7c7c7c;
+}

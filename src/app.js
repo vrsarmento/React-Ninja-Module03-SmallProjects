@@ -9,8 +9,8 @@ import './css/style.css'
 const App = () => (
   <div className='todoApp'>
     <Form />
-    <TodosList />
     <Filter />
+    <TodosList />
   </div>
 )
 
