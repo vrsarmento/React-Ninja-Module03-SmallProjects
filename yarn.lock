@@ -120,6 +120,11 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@fdaciuk/ajax@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@fdaciuk/ajax/-/ajax-3.0.4.tgz#408645e0b0e0e38333cdb8247e2b91ffe871bbda"
+  integrity sha512-pVTxdfHLSy3Pb0VGVk3NX9L/ahZ6hexJudtLsyR6/a7A4+Kyh7dY0mnMatODXswPQ0tkId1zuEKCjmalnCyYtQ==
+
 "@storybook/addon-actions@^3.2.6":
   version "3.4.12"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.4.12.tgz#ff6cbaf563c3cb5d648d6a35f66cfa50ced49bf4"
@@ -6908,6 +6913,13 @@ miller-rabin@^4.0.0:
     bn.js "^4.0.0"
     brorand "^1.0.1"
 
+milligram@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/milligram/-/milligram-1.4.1.tgz#6c8c781541b0d994ccca784c60f0aca1f7104b42"
+  integrity sha512-RCgh/boHhcXWOUfKJWm3RJRoUeaEguoipDg0mJ31G0tFfvcpWMUlO1Zlqqr12K4kAXfDlllaidu0x7PaL2PTFg==
+  dependencies:
+    normalize.css "~8.0.1"
+
 mime-db@1.44.0, "mime-db@>= 1.43.0 < 2":
   version "1.44.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.44.0.tgz#fa11c5eb0aca1334b4233cb4d52f10c5a6272f92"
@@ -7183,7 +7195,7 @@ normalize-url@^1.4.0:
     query-string "^4.1.0"
     sort-keys "^1.0.0"
 
-normalize.css@^8.0.1:
+normalize.css@^8.0.1, normalize.css@~8.0.1:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
   integrity sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
