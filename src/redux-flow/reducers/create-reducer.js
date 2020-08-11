@@ -14,5 +14,5 @@ const createReducer = (initialState, handleActions) => {
       ? handleActions[action.type](state, action)
       : state
 }
-  
+
 export default createReducer

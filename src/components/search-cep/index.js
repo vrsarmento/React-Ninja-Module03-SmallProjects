@@ -1,20 +1,13 @@
 'use strict'
 
 import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
 import ajax from '@fdaciuk/ajax'
 import SearchCep from './search-cep'
+import { updateAddress } from 'reducers/address/action-creators'
 
 class SearchCepContainer extends PureComponent {
   state = {
-    info: {
-      address: '',
-      city: '',
-      code: '',
-      district: '',
-      state: '',
-      status: 1,
-      message: ''
-    },
     isFetching: false
   }
 
@@ -25,12 +18,27 @@ class SearchCepContainer extends PureComponent {
       code: e.target.cep.value
     })
     this.setState({ isFetching: false })
-    this.setState({ info: response })
+    this.props.updateAddress(response)
   }
 
   render () {
-    return <SearchCep {...this.state} handleSubmit={this.handleSubmit} />
+    return (
+      <SearchCep
+        {...this.state}
+        address={this.props.address}
+        handleSubmit={this.handleSubmit}
+      />
+    )
   }
 }
 
-export default SearchCepContainer
+const mapStateToProps = (state) => ({
+  address: state.address
+})
+
+// Caso o nome da propriedade seja o mesmo da função e os parâmetros dessa função forem os mesmos enviados para o actionCreator, o mapDispatchToProps pode ser feito seguindo este padrão (um objeto, ao invés de uma função que retorna um objeto)
+const mapDispatchToProps = {
+  updateAddress
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchCepContainer)

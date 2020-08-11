@@ -2,8 +2,8 @@
 
 import React from 'react'
 
-const SearchCep = ({ info, isFetching, handleSubmit }) => (
-  <div>
+const SearchCep = ({ address, isFetching, handleSubmit }) => (
+  <div className='searchCep'>
     <form onSubmit={handleSubmit}>
       <input type='text' name='cep' />
       <button type='submit' disabled={isFetching}>
@@ -11,18 +11,18 @@ const SearchCep = ({ info, isFetching, handleSubmit }) => (
       </button>
     </form>
 
-    {info.status !== 400 && (
+    {address.status !== 400 && (
       <ul>
-        <li>CEP: {info.code}</li>
-        <li>Endereço: {info.address}</li>
-        <li>Bairro: {info.district}</li>
-        <li>Cidade: {info.city}</li>
-        <li>Estado: {info.state}</li>
+        <li>CEP: {address.code}</li>
+        <li>Endereço: {address.address}</li>
+        <li>Bairro: {address.district}</li>
+        <li>Cidade: {address.city}</li>
+        <li>Estado: {address.state}</li>
       </ul>
     )}
 
-    {info.status === 400 && (
-      <p>{info.message}</p>
+    {address.status === 400 && (
+      <p>{address.message}</p>
     )}
   </div>
 )

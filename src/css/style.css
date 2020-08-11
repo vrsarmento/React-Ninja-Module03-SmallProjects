@@ -73,9 +73,9 @@ form input {
 
 .todoApp li {
   cursor: pointer;
-  margin: 5px;
+  margin: 0px;
   font-size: 16px;
-  padding: 5px;
+  padding: 10px 5px;
   border-bottom: 1px solid #dbdbdb;
   display: flex;
 }
@@ -122,4 +122,17 @@ a.filterItem:hover {
   margin-left: 15px;
   padding-left: 15px;
   border-left: 1px solid #7c7c7c;
+}
+
+/* --------------------- // ------------------ */
+
+.searchCep ul {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+}
+
+.searchCep li {
+  margin-bottom: 10px;
+  font-size: 16px;
 }
