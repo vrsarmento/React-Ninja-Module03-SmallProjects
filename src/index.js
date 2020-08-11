@@ -8,7 +8,15 @@ import { Provider } from 'react-redux'
 import App from './app'
 import reducer from 'reducers'
 
-const store = createStore(reducer)
+const initialState = {
+  todos: [{
+    id: '123',
+    text: 'Teste de Estado Inicial',
+    completed: false
+  }]
+}
+
+const store = createStore(reducer, initialState)
 
 const renderApp = (NextApp) => {
   render(
@@ -27,5 +35,9 @@ if (module.hot) {
   module.hot.accept('./app', () => {
     const NextApp = require('./app').default
     renderApp(NextApp)
+  })
+  module.hot.accept('reducers', () => {
+    const nextReducer = require('reducers').default
+    store.replaceReducer(nextReducer)
   })
 }
