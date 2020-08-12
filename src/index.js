@@ -3,7 +3,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import App from './app'
 import reducer from 'reducers'
@@ -16,7 +16,38 @@ const initialState = {
   }]
 }
 
-const store = createStore(reducer, initialState)
+const logger = ({ dispatch, getState }) => (next) => (action) => {
+  console.log('LOGGER::will dispatch: ', action)
+  const nextAction = next(action)
+  console.log('LOGGER::next action: ', nextAction)
+  return nextAction
+}
+
+const thunk = ({ dispatch, getStore }) => (next) => (action) => {
+  if (typeof action === 'function') {
+    return action(dispatch, getState)
+  }
+  return next(action)
+}
+
+const store = createStore(reducer, initialState, applyMiddleware(logger, thunk))
+
+store.dispatch(lazyAction())
+function lazyAction () {
+  return (dispatch, getState) => {
+    // Simulating a request
+    setTimeout(() => {
+      dispatch({
+        type: 'todos:ADD_TODO',
+        payload: {
+          text: 'lazyAction',
+          id: '1234',
+          completed: false
+        }
+      })
+    }, 3000)
+  }
+}
 
 const renderApp = (NextApp) => {
   render(
