@@ -2,14 +2,31 @@
 
 import React from 'react'
 import { connect } from 'react-redux'
-import SearchCep from './search-cep'
 import { fetchAddress } from 'reducers/address/action-creators'
 
-const SearchCepContainer = ({ address, handleSubmit }) => (
-  <SearchCep
-    address={address}
-    handleSubmit={handleSubmit}
-  />
+export const SearchCep = ({ address, handleSubmit }) => (
+  <div className='searchCep'>
+    <form onSubmit={handleSubmit}>
+      <input type='text' name='cep' />
+      <button type='submit' disabled={address.isFetching}>
+        {address.isFetching ? 'Buscando...' : 'Buscar endereço'}
+      </button>
+    </form>
+
+    {address.status !== 400 && (
+      <ul>
+        <li>CEP: {address.code}</li>
+        <li>Endereço: {address.address}</li>
+        <li>Bairro: {address.district}</li>
+        <li>Cidade: {address.city}</li>
+        <li>Estado: {address.state}</li>
+      </ul>
+    )}
+
+    {address.status === 400 && (
+      <p>{address.message}</p>
+    )}
+  </div>
 )
 
 const mapStateToProps = (state) => ({
@@ -20,7 +37,7 @@ const mapDispatchToProps = (dispatch) => ({
   handleSubmit: (e) => {
     e.preventDefault()
     dispatch(fetchAddress(e.target.cep.value))
-  },
+  }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchCepContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(SearchCep)
