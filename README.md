@@ -1,6 +1,6 @@
 # Small projects implemented in Module #03 of the React Ninja Course
 
-### Each branch corresponds to a different project based on the React Boilerplate made here -> https://github.com/vrsarmento/React-Ninja_Boilerplate-React
+#### Each branch corresponds to a different project based on the React Boilerplate created here -> https://github.com/vrsarmento/React-Ninja_Boilerplate-React
 
 ## What's inside it?
 
