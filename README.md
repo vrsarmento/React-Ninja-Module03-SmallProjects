@@ -1,4 +1,6 @@
-# Workflow ReactJS
+# Small projects implemented in Module #03 of Course React Ninja
+
+### Each branch corresponds to a different project based on the React Boilerplate made here -> https://github.com/vrsarmento/React-Ninja_Boilerplate-React
 
 ## What's inside it?
 
@@ -46,7 +48,3 @@ A big thanks to [@hgtpcastro](https://github.com/hgtpcastro) for this tip.
 - `yarn build-storybook`: Build Storybook to static files
 - `yarn update-packages`: Update all packages to the latest version
 - `yarn start (or npm start)`: Special script reserved to run production code. Change as you wish. For now, it is the same as `yarn dev`.
-
-## License
-
-[MIT](https://github.com/fdaciuk/licenses/blob/master/MIT-LICENSE.md) &copy; Fernando Daciuk
